@@ -7,15 +7,14 @@ const data = require("./data");
 
 app.use(cors());
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send(data))
 
-app.get("/home", (req, res) => res.send(data))
-
-
+let error = ["Page not added yet"]
+app.get("/home", (req, res) => res.send([]))
 app.get('/home/:search', (req, res) => {
     const query = req.params.search;
     if (data[query] == undefined){
-        res.send("Page not added yet")
+        res.send(error)
     } else {
         res.send(data[query])
     }
