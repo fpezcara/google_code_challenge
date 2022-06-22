@@ -10,14 +10,23 @@ body {
     height: 35vh;
 } */
 
-#mainContainer {
+header {
     display: flex;
-    flex-direction: row;
+    padding: 2em;
+    border-bottom: 1px solid #dadce0;
+}
+
+header img {
+    width: 125px;
+    padding: 10px;
+}
+
+header div {
+    display: flex;
     align-items: center;
-    justify-content: flex-start;
-    height: 15vh;
-    margin-top: 0;
-    margin-left: 2vh;
+    justify-content: space-between;
+    width: 60%;
+
 }
 
 form input {
@@ -25,7 +34,34 @@ form input {
     border: 0.1em solid rgb(118, 118, 118);
     border-radius: 3em;
     width: 30em;
-    padding: 0.5em;
+    padding: 0.8em;
+    height: 3em;
+    align-content: center;
 }
 
 
+#buttonContainer {
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
+    width: 18em;
+}
+
+#buttonContainer button {
+    border: none;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    background-color: #f8f9fa;
+    border-radius: 0.4em;
+    color: #202124;
+    min-width: 54px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#buttonContainer button:hover {
+    border: 1px solid #dadce0;
+}
