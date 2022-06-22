@@ -1,11 +1,43 @@
-const form = document.querySelector('form')
+const searchButton = document.querySelector('#submit')
+const luckyButton = document.querySelector('#lucky')
 
-form.addEventListener('submit', results)
+searchButton.addEventListener('click', results)
+luckyButton.addEventListener('click', luckyResults)
 
-function results(e) {
-  e.preventDefault()
-  let input = e.target.search.value
+function results() {
+  input = search.value
+  console.log(search.value)
   fetch(`http://localhost:3000/home/${input}`)
-    .then(resp => resp.text())
-    .then(result => document.querySelector("footer").innerHTML = result)
+    .then(resp => resp.json())
+    .then(result => {
+        const mainList = document.querySelector("#resultsList")
+        mainList.innerHTML = ""
+        for (let i=0; i<result.length; i++){
+            const newList = document.createElement("li")
+            newList.textContent = result[i]
+            mainList.append(newList)
+        }
+    })
 }
+
+// function luckyResults() {
+//   input = search.value
+//   fetch(`http://localhost:3000/home/${input}`)
+//     .then(resp => resp.json())
+//     .then(result => {
+//         const mainList = document.querySelector("#resultsList")
+//         mainList.innerHTML = ""
+//         const newList = document.createElement("li")
+//         randomItem = Math.floor(Math.random()*(result.length))
+//         newList.textContent = result[randomItem]
+//         mainList.append(newList)
+//     })
+// }
+
+
+function luckyResults() {
+  let input = search.value
+  window.location.href="resultspage.html"
+}
+
+module.exports= {input};
