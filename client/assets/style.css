@@ -4,37 +4,39 @@
 
 body {
     margin: 0;
+    font-family: arial, sans-serif;
+    font-size: 15px;
+    width: 100%;
 }
 
-#navbar {
-    display: flex;
-    justify-content: center;
-}
 
-#navbarList {
+#navbar ul {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    width: 90%;
+    align-items: space-between;
     list-style: none;
+    padding: 1em;
 }
+
 
 #navbarList div {
     display: flex;
     justify-content: space-between;
-    /* background: yellow; */
-    width: 10%;
+    align-items: space-between;
+    width: 20%;
+    min-width: 50px;
 }
 
-#navbarList div:first-of-type {}
+#navbarList a {
+    width: inherit;
+}
 
 main {
-    /* background: blue; */
     display: flex;
     justify-content: center;
     align-items: center;
     height: 35vh;
-    /* flex-direction: column; */
+    color: #202124;
 }
 
 #mainContainer {
@@ -43,15 +45,23 @@ main {
     align-items: center;
     justify-content: space-evenly;
     height: 30vh;
-    /* background: purple; */
 }
 
-form input {
+form input[type='text'] {
     margin-top: -37px;
-    border: 0.1em solid rgb(118, 118, 118);
+    border: 1px solid #dfe1e5;
     border-radius: 3em;
-    width: 30em;
     padding: 0.5em;
+    margin: 0 auto;
+    width: 38em;
+    max-width: 584px;
+    height: 44px;
+}
+
+form input[type='text']:hover,
+form input[type='text']:focus {
+    box-shadow: 0 1px 6px rgb(32 33 36 / 28%);
+    border-color: rgba(223, 225, 229, 0);
 }
 
 a {
@@ -59,5 +69,66 @@ a {
 }
 
 a:visited {
-    color: black;
+    color: #202124;
+}
+
+button {
+    border: none;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 10%);
+    background-color: #f8f9fa;
+    border-radius: 0.4em;
+    color: #202124;
+    min-width: 54px;
+    margin: 11px 4px;
+    padding: 0 16px;
+    line-height: 27px;
+    height: 36px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    border: 1px solid #dadce0;
+}
+
+footer {
+    color: #202124;
+    width: inherit;
+    position: fixed;
+    bottom: 0;
+    background: #f8f9fa;
+}
+
+footer div {
+    display: flex;
+    width: 15em;
+    justify-content: space-between;
+    padding: 15px 30px;
+    font-size: 15px;
+    color: #70757a;
+}
+
+footer div:first-of-type {
+    width: 25em;
+}
+
+#carbonNeutralLi {
+    text-align: center;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    width: inherit;
+    padding: 0;
+    font-size: 14px;
+}
+
+footer p {
+    padding: 0.9em 2em;
+    color: #202124;
+    border-bottom: 1px solid #dadce0;
+
 }
