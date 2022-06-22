@@ -1,9 +1,13 @@
 const searchButton = document.querySelector('#submit')
-
 searchButton.addEventListener('click', results)
+const input = require("./script.js");
+
+
+
+search.value = input
 
 function results() {
-  let input = search.value
+  input = search.value
   console.log(search.value)
   fetch(`http://localhost:3000/home/${input}`)
     .then(resp => resp.json())

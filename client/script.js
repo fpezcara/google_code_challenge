@@ -5,7 +5,7 @@ searchButton.addEventListener('click', results)
 luckyButton.addEventListener('click', luckyResults)
 
 function results() {
-  let input = search.value
+  input = search.value
   console.log(search.value)
   fetch(`http://localhost:3000/home/${input}`)
     .then(resp => resp.json())
@@ -20,17 +20,24 @@ function results() {
     })
 }
 
+// function luckyResults() {
+//   input = search.value
+//   fetch(`http://localhost:3000/home/${input}`)
+//     .then(resp => resp.json())
+//     .then(result => {
+//         const mainList = document.querySelector("#resultsList")
+//         mainList.innerHTML = ""
+//         const newList = document.createElement("li")
+//         randomItem = Math.floor(Math.random()*(result.length))
+//         newList.textContent = result[randomItem]
+//         mainList.append(newList)
+//     })
+// }
+
+
 function luckyResults() {
   let input = search.value
-  console.log(search.value)
-  fetch(`http://localhost:3000/home/${input}`)
-    .then(resp => resp.json())
-    .then(result => {
-        const mainList = document.querySelector("#resultsList")
-        mainList.innerHTML = ""
-        const newList = document.createElement("li")
-        randomItem = Math.floor(Math.random()*(result.length))
-        newList.textContent = result[randomItem]
-        mainList.append(newList)
-    })
+  window.location.href="resultspage.html"
 }
+
+module.exports= {input};
