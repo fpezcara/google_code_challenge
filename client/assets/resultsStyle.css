@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+/* main {
+    height: 35vh;
+} */
+
+#mainContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    height: 15vh;
+    margin-top: 0;
+    margin-left: 2vh;
+}
+
+form input {
+    margin-top: -37px;
+    border: 0.1em solid rgb(118, 118, 118);
+    border-radius: 3em;
+    width: 30em;
+    padding: 0.5em;
+}
+
+
