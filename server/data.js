@@ -1,4 +1,4 @@
-dogs = [
+const dogs = [
     "Labrador",
     "German Shepherd",
     "Golden Retriver",
@@ -10,7 +10,7 @@ dogs = [
     "Rottweiler",
     "Dachshund"
 ]
-cats = [
+const cats = [
     "Ragdoll",
     "Maine Coon",
     "Exotic",
@@ -22,7 +22,7 @@ cats = [
     "Scottish Fold",
     "Sphynx"
 ]
-birds = [
+const birds = [
     "Bluebird",
     "Hummingbird",
     "Cardinal",
@@ -34,6 +34,5 @@ birds = [
     "Sparrow",
     "Pigeon"
 ]
-
 
   module.exports = {dogs, cats, birds};
