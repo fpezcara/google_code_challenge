@@ -29,6 +29,7 @@ body {
 
 #navbarList a {
     width: inherit;
+    color: #202124;
 }
 
 main {
@@ -139,4 +140,3 @@ footer p {
 
     }
 }
-

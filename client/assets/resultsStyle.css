@@ -21,7 +21,7 @@ header img {
 header div {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /*justify-content: space-between; */
     width: 60%;
 
 }
@@ -39,8 +39,9 @@ form input {
 
 #buttonContainer {
     display: flex;
-    justify-content: center;
-    width: 18em;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: 2em;
 }
 
 #buttonContainer button {
@@ -74,12 +75,10 @@ form input {
 }
 
 @media only screen and (max-width: 1200px) {
-    #navbarList div {
-        width: 30%;
-    }
 
     #submit {
-        flex: 1;
+        width: 15rem;
+
     }
 
     #lucky {
