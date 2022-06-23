@@ -65,3 +65,14 @@ form input {
 #buttonContainer button:hover {
     border: 1px solid #dadce0;
 }
+
+#resultsList {
+    display:block;
+    width: 100vh;
+    background-color: rgb(244, 242, 242);
+    border-radius: 2vh;
+    margin-left: 2vh;
+    font-size: 2vh;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+}
