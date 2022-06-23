@@ -2,29 +2,25 @@ const searchButton = document.querySelector("#submit");
 const luckyButton = document.querySelector("#lucky");
 const form = document.querySelector("form");
 
-searchButton.addEventListener("click", results);
-luckyButton.addEventListener("click", luckyResults);
-form.addEventListener("submit", enterForm);
-
-function enterForm(e){
+searchButton.addEventListener("click", () => {
+  const option = "normal";
+  results(option)
+});
+luckyButton.addEventListener("click", () => {
+  const option = "lucky";
+  results(option)
+});
+form.addEventListener("submit", (e) => {
   e.preventDefault()
-  results()
-}
+  const option = "normal";
+  results(option)
+});
 
-function results() {
+function results(option) {
   const input = search.value.trim();
-  const option = "results";
   if (/^\s*$/.test(input) != true){
     fetchItems(input, option)
   }  
-}
-
-function luckyResults() {
-  const input = search.value.trim();
-  const option = "lucky";
-  if (/^\s*$/.test(input) != true){
-    fetchItems(input, option)
-  }
 }
 
 function fetchItems(input, option) {
@@ -33,7 +29,7 @@ function fetchItems(input, option) {
     .then((result) => {
       const mainList = document.querySelector("#resultsList");
       mainList.textContent = "";
-      if (option == "results") {
+      if (option == "normal") {
         for (let i = 0; i < result.length; i++) {
           const newList = document.createElement("p");
           newList.textContent = result[i];
@@ -51,11 +47,7 @@ function firstRun() {
   const input = sessionStorage.getItem("input");
   search.value = input;
   option = sessionStorage.getItem("option");
-  if (option == "results") {
-    results()
-  } else if (option == "lucky") {
-    luckyResults()
-  }
+  fetchItems(input, option)
 }
 
 firstRun()

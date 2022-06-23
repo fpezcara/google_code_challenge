@@ -2,24 +2,20 @@ const searchButton = document.querySelector("#submit");
 const luckyButton = document.querySelector("#lucky");
 const form = document.querySelector("form");
 
-searchButton.addEventListener("click", results);
-luckyButton.addEventListener("click", luckyResults);
-form.addEventListener("submit", enterForm);
-
-function enterForm(e){
-  e.preventDefault()
-  results()
-}
-
-function results() {
-  const option = "results";
+searchButton.addEventListener("click", () =>{
+  const option = "normal";
   newPage(option)
-}
-
-function luckyResults() {
+});
+luckyButton.addEventListener("click", () => {
   const option = "lucky";
   newPage(option)
-}
+});
+form.addEventListener("submit", (e) =>{
+  e.preventDefault()
+  const option = "normal";
+  newPage(option)
+});
+
 function newPage(option) {
   const input = search.value.trim();
   console.log(input)
