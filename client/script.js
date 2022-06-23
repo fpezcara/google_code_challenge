@@ -1,8 +1,15 @@
 const searchButton = document.querySelector("#submit");
 const luckyButton = document.querySelector("#lucky");
+const form = document.querySelector("form");
 
 searchButton.addEventListener("click", results);
 luckyButton.addEventListener("click", luckyResults);
+form.addEventListener("submit", enterForm);
+
+function enterForm(e){
+  e.preventDefault()
+  results()
+}
 
 function results() {
   const input = search.value;
@@ -14,9 +21,9 @@ function results() {
       .then((resp) => resp.json())
       .then((result) => {
         const mainList = document.querySelector("#resultsList");
-        mainList.innerHTML = "";
+        mainList.textContent = "";
         for (let i = 0; i < result.length; i++) {
-          const newList = document.createElement("li");
+          const newList = document.createElement("p");
           newList.textContent = result[i];
           mainList.append(newList);
         }
@@ -36,8 +43,8 @@ function luckyResults() {
       .then((resp) => resp.json())
       .then((result) => {
         const mainList = document.querySelector("#resultsList");
-        mainList.innerHTML = "";
-        const newList = document.createElement("li");
+        mainList.textContent = "";
+        const newList = document.createElement("p");
         randomItem = Math.floor(Math.random() * result.length);
         newList.textContent = result[randomItem];
         mainList.append(newList);
@@ -55,16 +62,15 @@ if (document.title == "results") {
     .then((resp) => resp.json())
     .then((result) => {
       const mainList = document.querySelector("#resultsList");
-      mainList.innerHTML = "";
       option = sessionStorage.getItem("option");
       if (option == "results") {
         for (let i = 0; i < result.length; i++) {
-          const newList = document.createElement("li");
+          const newList = document.createElement("p");
           newList.textContent = result[i];
           mainList.append(newList);
         }
       } else if (option == "lucky") {
-        const newList = document.createElement("li");
+        const newList = document.createElement("p");
         randomItem = Math.floor(Math.random() * result.length);
         newList.textContent = result[randomItem];
         mainList.append(newList);
