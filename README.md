@@ -2,7 +2,7 @@
 
 ## Description
 
-Code challenge that consists of recreating Google's search engine
+Code challenge that consists of recreating Google's search engine. Look for a term in the search bar in the homepage
 
 ## Server side
 
@@ -13,3 +13,7 @@ After the installation, and still inside `server` folder, run `npm run dev` whic
 ## Client side
 
 Open the `index.html` with your preferred browser
+
+## Built by
+
+Rameez Khawaja & Florencia Pezcara
